@@ -35,15 +35,16 @@ class MiniBinocularCamera:
             "uvcdynctrl -d /dev/video{cam_id} -S 6:8  '(LE)0x76c3'",
             "uvcdynctrl -d /dev/video{cam_id} -S 6:10 '(LE)0x0{cam_mode}00'",
         ]
-        self.calib_file = calib_file
-        self._camera=dict()
-        self._stereo_rectify_map=self._get_rectify_map(calib_file)
 
         for init_num in range(3):
             for command in self.command_list:
                 subprocess.Popen(shlex.split(command.format(cam_id=self.cam_id, cam_mode=self.cam_mode)))
             ret, frame = self.cam.read()
             cv2.waitKey(500)
+
+        self.calib_file = calib_file
+        self._camera=dict()
+        self._stereo_rectify_map=self._get_rectify_map(calib_file)
         print 'calibration file path: ' + self.calib_file
 
 
