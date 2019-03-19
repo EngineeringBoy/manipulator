@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 	ros::NodeHandle nh;
 	image_transport::ImageTransport it(nh);
 	init_disparity_method(6, 96);
-	image_transport::Subscriber sub = it.subscribe("/mini_binocular/image", 1, imageCallback);
+	image_transport::Subscriber sub = it.subscribe("/mini_binocular/rectify", 1, imageCallback);
 	ros::spin();
 	cv::destroyAllWindows();
 	return 0;

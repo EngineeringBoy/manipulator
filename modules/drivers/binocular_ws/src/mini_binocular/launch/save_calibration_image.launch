@@ -1,3 +1,7 @@
 <launch>
-  <node name="save_calibration_image" pkg="mini_binocular" type="save_calibration_image.py" output="screen"/>
+  <node name="save_calibration_image" pkg="mini_binocular" type="save_calibration_image.py" output="screen">
+  	<param name="save_calib_img_dir" value="/home/barry/workspace/manipulator/data/3/" />
+  	<param name="calib_board_width" value="11" />
+  	<param name="calib_board_height" value="8" />
+  </node>
 </launch>

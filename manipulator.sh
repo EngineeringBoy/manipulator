@@ -10,6 +10,7 @@ function print_usage() {
 	.${BOLD}/manipulator.sh${NONE} [OPTION]"
 
 	echo -e "\n${RED}Options${NONE}:
+	${BLUE}build{NONE}: build all
 	${BLUE}build_perception${NONE}: new added, to build object detect function
 	${BLUE}build_drivers${NONE}: new added, to build binocular camera driver
 	"
@@ -18,11 +19,23 @@ function print_usage() {
 function build_drivers() {
 	cd modules/drivers/binocular_ws/
 	catkin_make
+	cd -
 }
 
 function build_perception() {
 	cd modules/perception/object/binocular_camera/
 	catkin_make
+	cd -
+}
+
+function build_calibration() {
+	if [ ! -d "modules/calibration/stereo_calibration/build" ]; then
+ 		mkdir -p modules/calibration/stereo_calibration/build
+ 	fi
+ 	cd modules/calibration/stereo_calibration/build
+ 	cmake ..
+ 	make -j
+ 	cd -
 }
 
 function main() {
@@ -34,6 +47,14 @@ function main() {
 			;;
 		build_perception)
 			build_perception
+			;;
+		build_calibration)
+			build_calibration
+			;;
+		build)
+			build_drivers
+			build_perception
+			build_calibration
 			;;
 		*)
 			print_usage

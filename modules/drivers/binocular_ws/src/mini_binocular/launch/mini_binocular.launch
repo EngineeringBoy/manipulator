@@ -1,3 +1,5 @@
 <launch>
-  <node name="grub_image" pkg="mini_binocular" type="grub_image.py" output="screen"/>
+  <node name="grub_image" pkg="mini_binocular" type="grub_image.py" output="screen">
+  	<param name="calib_file" value="/home/barry/workspace/manipulator/modules/drivers/binocular_ws/src/mini_binocular/calib_file/cam_stereo_190319.yml" />
+  </node>
 </launch>
