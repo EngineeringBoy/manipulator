@@ -1,0 +1,3 @@
+<launch>
+  <node name="grub_image" pkg="mini_binocular" type="grub_image.py" output="screen"/>
+</launch>

@@ -1,0 +1,3 @@
+<launch>
+  <node name="object_detect" pkg="object_detect" type="object_detect_node" output="screen"/>
+</launch>

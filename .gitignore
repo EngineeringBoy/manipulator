@@ -31,4 +31,12 @@
 *.out
 *.app
 
+# automatically generated file
 *~
+
+# data
+/data
+
+# ros generated folders
+build
+devel
