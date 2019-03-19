@@ -2,16 +2,22 @@
 manipulator based on vision
 
 environment:  
-	&emsp ubuntu14.04  
-	&emsp ros  
-	&emsp opencv3  
-	&emsp cuda  
-	&emsp uvcdynctrl  
-	&emsp libpopt-dev  
+- ubuntu14.04  
+- ros  
+- opencv3  
+- cuda  
+- uvcdynctrl  
+- libpopt-dev  
 
 install:  
-	&emsp ros: ...  
-	&emsp opencv3: ...  
-	&emsp cuda: ...  
-	&emsp uvcdynctrl: sudo apt-get sudo apt-get install uvcdynctrl  
-	&emsp libpopt-dev: sudo apt-get install libpopt-dev  
+- ros: ...  
+- opencv3: ...  
+- cuda: ...  
+- uvcdynctrl: 
+```bash
+sudo apt-get sudo apt-get install uvcdynctrl  
+```
+- libpopt-dev: 
+```bash
+sudo apt-get install libpopt-dev  
+```
