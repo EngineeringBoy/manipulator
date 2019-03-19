@@ -13,6 +13,7 @@ function print_usage() {
 	${BLUE}build{NONE}: build all
 	${BLUE}build_perception${NONE}: new added, to build object detect function
 	${BLUE}build_drivers${NONE}: new added, to build binocular camera driver
+	${BLUE}build_calibration${NONE}: new added, to build binocular camera calibration
 	"
 }
 
