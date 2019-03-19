@@ -1,4 +1,8 @@
 # manipulator
 manipulator based on vision
 
-first update
+environment:
+	ubuntu14.04
+	ros
+	opencv3
+	cuda
